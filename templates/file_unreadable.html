@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content %}
+	{% if folder.chunks %}
+	<ul class="breadcrumb">
+		{% for chunk in folder.chunks() %}
+			<li>
+				<a href="/files/{{ chunk.path }}">{{ chunk.chunk }}</a>
+				<span class="divider">/</span>
+			</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+    <h2>Can not read the file</h2>
+{% endblock %}
